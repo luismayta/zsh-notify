@@ -63,12 +63,12 @@ _zsh_notify_popup() {
 
 _zsh_notify_success() {
     _zsh_notify_popup "${1}" "The command succeded after ${2} seconds" success.jpg
-    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3
+    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3 > /dev/null 2>&1
 }
 
 _zsh_notify_error() {
     _zsh_notify_popup "${1}" "The command failed after ${2} seconds with code: ${3}" error.png
-    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3
+    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3 > /dev/null 2>&1
 }
 
 _zsh_notify_command_complete() {
