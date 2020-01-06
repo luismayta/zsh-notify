@@ -29,10 +29,10 @@ function notify::play::osx {
 function notify::play {
     case "${OSTYPE}" in
     darwin*)
-        notify::play::osx
+        notify::play::osx "${1}"
         ;;
     linux*)
-        notify::play::linux
+        notify::play::linux "${1}"
     ;;
     esac
 }
