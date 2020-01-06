@@ -18,8 +18,26 @@ typeset -g _ZSH_NOTIFY_TERMINAL_BUNDLE="com.googlecode.iterm2"
 typeset -g _ZSH_NOTIFY_SCRIPT_DIR="$(dirname $0:A)"
 typeset -g _ZSH_NOTIFY_ASSETS_DIR="${_ZSH_NOTIFY_SCRIPT_DIR}/assets"
 
+function notify::play::linux {
+    mpg123 "${1}"
+}
 
-_zsh_notify_popup() {
+function notify::play::osx {
+    afplay "${1}"
+}
+
+function notify::play {
+    case "${OSTYPE}" in
+    darwin*)
+        notify::play:osx
+        ;;
+    linux*)
+        notify::play::linux
+    ;;
+    esac
+}
+
+function notify::popup::osx {
     # $1 subtitle of the notification (the command that was executed)
     # $2 the message for the notification
     # $3 the icon for the notification popup
@@ -28,14 +46,29 @@ _zsh_notify_popup() {
         -appIcon "${_ZSH_NOTIFY_ASSETS_DIR}/${3}"
 }
 
+function notify::popup::linux {
+    return
+}
+
+_zsh_notify_popup() {
+    case "${OSTYPE}" in
+    darwin*)
+        notify::popup::osx "${1}" "${2}" "${3}"
+        ;;
+    linux*)
+        notify::popup::linux "${1}" "${2}" "${3}"
+    ;;
+    esac
+}
+
 _zsh_notify_success() {
     _zsh_notify_popup "${1}" "The command succeded after ${2} seconds" success.jpg
-    afplay "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3
+    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3
 }
 
 _zsh_notify_error() {
     _zsh_notify_popup "${1}" "The command failed after ${2} seconds with code: ${3}" error.png
-    afplay "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3
+    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3
 }
 
 _zsh_notify_command_complete() {
@@ -73,6 +106,15 @@ _zsh_notify_store_command_stats() {
     _zsh_notify_start_time=$(date +%s)
 }
 
+function notify::install::mpg123 {
+    if ! type -p brew > /dev/null; then
+        message_warning "Is neccesary have brew, please use luismayta/zsh-brew"
+    else
+        message_info "installing mpg123"
+        brew install mpg123
+        message_success "installing mpg123"
+    fi
+}
 
 function notify::install::terminal-notifier {
     if ! type -p brew > /dev/null; then
@@ -86,6 +128,10 @@ function notify::install::terminal-notifier {
 
 if ! type -p terminal-notifier > /dev/null; then
     notify::install::terminal-notifier
+fi
+
+if ! type -p mpg123 > /dev/null; then
+    notify::install::mpg123
 fi
 
 # For this script to be able to get the exit status of the last executed command ($?)
