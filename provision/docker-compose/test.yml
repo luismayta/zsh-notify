@@ -1,0 +1,14 @@
+# Docker Compose
+# https://docs.docker.com/compose/
+#
+# Usage: test up
+
+version: '3.6'
+services:
+  app:
+    image: zsh-notify-app-test
+    environment: &environment
+      - STAGE=testing
+    build:
+      args:
+        stage: test
