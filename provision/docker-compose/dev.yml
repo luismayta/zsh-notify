@@ -1,0 +1,26 @@
+# Docker Compose
+# https://docs.docker.com/compose/
+
+version: '3.6'
+services:
+  # Python
+  app:
+    environment: &environment
+      - STAGE=local
+    image: zsh-notify-app-dev
+    build:
+      args:
+        stage: dev
+
+  check:
+    image: zsh-notify-check-dev
+    environment: *environment
+    build:
+      context: .
+      dockerfile: provision/docker/check/Dockerfile
+      args:
+        stage: dev
+    volumes:
+      - .:/usr/src
+    env_file:
+      - .env
