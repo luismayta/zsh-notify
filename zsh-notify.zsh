@@ -24,16 +24,18 @@ _zsh_notify_popup() {
     # $2 the message for the notification
     # $3 the icon for the notification popup
     terminal-notifier -title "Long running command" -subtitle "${1}" \
-        -message "${2}" -activate "${_ZSH_NOTIFY_TERMINAL_BUNDLE}" -sound default \
+        -message "${2}" -activate "${_ZSH_NOTIFY_TERMINAL_BUNDLE}" \
         -appIcon "${_ZSH_NOTIFY_ASSETS_DIR}/${3}"
 }
 
 _zsh_notify_success() {
     _zsh_notify_popup "${1}" "The command succeded after ${2} seconds" success.jpg
+    afplay "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3
 }
 
 _zsh_notify_error() {
     _zsh_notify_popup "${1}" "The command failed after ${2} seconds with code: ${3}" error.png
+    afplay "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3
 }
 
 _zsh_notify_command_complete() {
