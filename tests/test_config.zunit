@@ -1,0 +1,9 @@
+#!/usr/bin/env zunit
+
+@setup {
+    PATH="/bin:/usr/bin:/usr/local/bin"
+	  load ../zsh-notify.zsh
+}
+
+@teardown {
+}
