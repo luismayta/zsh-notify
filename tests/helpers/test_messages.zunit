@@ -1,0 +1,16 @@
+#!/usr/bin/env zunit
+
+@setup {
+    PATH="/bin:/usr/bin:/usr/local/bin"
+	  load ../../src/helpers/messages.zsh
+    load _support/functions
+}
+
+@teardown {
+}
+
+@test 'Load message_info ' {
+	  run message_info "info"
+
+	  assert $message_info same_as "info"
+}
