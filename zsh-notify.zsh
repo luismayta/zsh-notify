@@ -7,6 +7,8 @@
 # Authors:
 #   Luis Mayta <slovacus@gmail.com>
 #
+[ -e "~/.zsh-async/async.zsh" ] && source ~/.zsh-async/async.zsh
+
 zmodload zsh/regex
 notify_package_name='notify'
 
@@ -48,7 +50,7 @@ function notify::play::async {
 }
 
 function notify::play::factory {
-    if type -p async_init > /dev/null; then
+    if which async_init > /dev/null; then
         notify::play::async "${1}"
     else
         notify::play "${1}"
