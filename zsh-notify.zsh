@@ -12,7 +12,7 @@ notify_package_name='notify'
 
 
 # notify if commands was running for more than TIME_THRESHOLD seconds:
-typeset -g _ZSH_NOTIFY_TIME_THRESHOLD=20
+typeset -g _ZSH_NOTIFY_TIME_THRESHOLD=10
 typeset -g _ZSH_NOTIFY_RE_SKIP_COMMANDS="^[^ ]*(ssh|vim|tmux|tig|man|cat|more)"
 typeset -g _ZSH_NOTIFY_TERMINAL_BUNDLE="com.googlecode.iterm2"
 typeset -g _ZSH_NOTIFY_SCRIPT_DIR="$(dirname $0:A)"
@@ -35,6 +35,29 @@ function notify::play {
         notify::play::linux "${1}"
     ;;
     esac
+}
+
+function notify::play::async {
+    async_init
+    # Start a worker that will report job completion
+    async_start_worker notify_worker_play -n
+    # Register our callback function to run when the job completes
+    async_register_callback notify_worker_play notify::completed::callback
+    # Start the job
+    async_job notify_worker_play notify::play "${1}"
+}
+
+function notify::play::factory {
+    if type -p async_init > /dev/null; then
+        notify::play::async "${1}"
+    else
+        notify::play "${1}"
+    fi
+}
+
+# Define a function to process the result of the job
+function notify::completed::callback {
+    async_job notify_worker_play notify::play
 }
 
 function notify::popup::osx {
@@ -63,12 +86,12 @@ _zsh_notify_popup() {
 
 _zsh_notify_success() {
     _zsh_notify_popup "${1}" "The command succeded after ${2} seconds" success.jpg
-    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3 > /dev/null 2>&1
+    notify::play::factory "${_ZSH_NOTIFY_ASSETS_DIR}"/success.mp3 > /dev/null 2>&1
 }
 
 _zsh_notify_error() {
     _zsh_notify_popup "${1}" "The command failed after ${2} seconds with code: ${3}" error.png
-    notify::play "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3 > /dev/null 2>&1
+    notify::play::factory "${_ZSH_NOTIFY_ASSETS_DIR}"/error.mp3 > /dev/null 2>&1
 }
 
 _zsh_notify_command_complete() {
@@ -98,7 +121,7 @@ _zsh_notify_command_complete() {
 }
 
 _zsh_notify_store_command_stats() {
-    if [[ "${1}" -regex-match "${_ZSH_NOTIFY_RE_SKIP_COMMANDS}" ]]; then
+    if [ "${1}" -regex-match "${_ZSH_NOTIFY_RE_SKIP_COMMANDS}" ]; then
         return
     fi
 
