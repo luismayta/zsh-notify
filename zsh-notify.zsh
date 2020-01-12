@@ -134,11 +134,11 @@ _zsh_notify_store_command_stats() {
 function notify::install::mpg123 {
     if ! type -p brew > /dev/null; then
         message_warning "Is neccesary have brew, please use luismayta/zsh-brew"
-    else
-        message_info "installing mpg123"
-        brew install mpg123
-        message_success "installing mpg123"
+        return
     fi
+    message_info "installing mpg123"
+    brew install mpg123
+    message_success "installing mpg123"
 }
 
 function notify::install::terminal-notifier {
