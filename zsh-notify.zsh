@@ -142,6 +142,12 @@ function notify::install::mpg123 {
 }
 
 function notify::install::terminal-notifier {
+    case "${OSTYPE}" in
+    linux*)
+        return
+    ;;
+    esac
+
     if ! type -p brew > /dev/null; then
         message_warning "Is neccesary have brew, please use luismayta/zsh-brew"
     else
