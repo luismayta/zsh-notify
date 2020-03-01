@@ -1,0 +1,35 @@
+{
+  "name": "zsh-notify",
+  "version": "0.0.0",
+  "description": "tools for notify with zsh",
+  "repository": "ssh://git@github.com/luismayta/zsh-notify.git",
+  "author": "@slovacus <slovacus@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "prettier:fix": "prettier '**/*.{js?(on),ts?(x),scss,md,yml,yaml}' --write --list-different",
+    "prettier": "prettier '**/*.{js?(on),ts?(x),scss,md,yml,yaml}' --write=false --list-different",
+    "precommit": "lint-staged"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn precommit"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@equipindustry/prettierrc": "^0.1.1",
+    "lint-staged": "^10.0.8",
+    "husky": "^4.2.1",
+    "prettier": "^1.19.1",
+    "semantic-release": "^17.0.2"
+  },
+  "dependencies": {}
+}
