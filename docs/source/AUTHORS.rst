@@ -1,4 +1,3 @@
-*******
 Authors
 *******
 
@@ -9,4 +8,3 @@ Leads
 
 Contributors (chronological)
 ============================
-
