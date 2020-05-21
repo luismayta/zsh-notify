@@ -1,35 +1,51 @@
 {
-  "name": "zsh-notify",
+  "keywords": [],
+  "name": "@luismayta/zsh-notify",
+  "private": true,
+  "description": "tfenv for zsh",
   "version": "0.0.0",
-  "description": "tools for notify with zsh",
   "repository": "ssh://git@github.com/luismayta/zsh-notify.git",
-  "author": "@slovacus <slovacus@gmail.com>",
+  "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "semantic-release": "semantic-release",
-    "prettier:fix": "prettier '**/*.{js?(on),ts?(x),scss,md,yml,yaml}' --write --list-different",
-    "prettier": "prettier '**/*.{js?(on),ts?(x),scss,md,yml,yaml}' --write=false --list-different",
+    "clean": "rimraf dist .next out build",
+    "clean:all": "yarn clean node_modules",
+    "lint": "eslint -c .eslintrc.js ./ --ext .js,.jsx,.mjs,.d.ts,.ts,.tsx",
+    "lint:fix": "yarn lint --fix",
+    "prettier": "prettier '**/*.{js?(on),ts?(x),jsx,less,scss,md?(x),y(a)ml}' --write=false --list-different",
+    "prettier:fix": "yarn prettier --write=true",
     "precommit": "lint-staged"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+  "publishConfig": {
+    "access": "private"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn precommit"
+      "pre-commit": "yarn precommit",
+      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS"
     }
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@equipindustry/prettierrc": "^0.1.1",
-    "lint-staged": "^10.0.8",
-    "husky": "^4.2.1",
-    "prettier": "^1.19.1",
-    "semantic-release": "^17.0.2"
+    "@equipindustry/eslint-config": "^0.3.4",
+    "@equipindustry/prettierrc": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "<=6.8.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5",
+    "prettier-tslint": "^0.4.2",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.0.7",
+    "typescript": "^3.8.3"
   },
   "dependencies": {}
 }
