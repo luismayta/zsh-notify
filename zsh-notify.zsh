@@ -52,9 +52,9 @@ function notify::play::async {
 function notify::play::factory {
     if which async_init > /dev/null; then
         notify::play::async "${1}"
-    else
-        notify::play "${1}"
+        return
     fi
+    notify::play "${1}"
 }
 
 # Define a function to process the result of the job
