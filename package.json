@@ -6,7 +6,7 @@
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "MIT",
   "stylintrc": ".stylintrc",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "clean": "rimraf dist .next out build",
     "clean:all": "yarn clean node_modules",
