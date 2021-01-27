@@ -1,0 +1,74 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: zsh-notify
+
+company:
+  name: hadenlabs
+  description: |-
+    company labs
+  url: https://hadenlabs.com
+  github: https://github.com/hadenlabs
+  email: support@hadenlbas.com
+
+copyright:
+  name: Hadenlabs
+  url: https://hadenlabs.com
+
+email:
+  support: support@hadenlabs.com
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: 'Mit'
+
+# Canonical GitHub repo
+github_repo: luismayta/zsh-notify
+
+# Badges to display
+badges:
+  - name: 'Build Status'
+    image: 'https://travis-ci.org/luismayta/zsh-notify.svg?branch=main'
+    url: 'https://travis-ci.org/luismayta/zsh-notify'
+  - name: 'Issues'
+    image: 'https://img.shields.io/github/issues/luismayta/zsh-notify.svg'
+    url: 'https://github.com/luismayta/zsh-notify/issues'
+  - name: 'Latest Release'
+    image: 'https://img.shields.io/github/release/luismayta/zsh-notify.svg'
+    url: 'https://travis-ci.org/luismayta/zsh-notify/releases'
+
+# Short description of this project
+description: |-
+  zsh-notify plugin for zsh.
+
+requirements: |-
+
+  This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+
+  ```{.sourceCode .bash}
+  https://github.com/luismayta/zsh-core
+  https://github.com/luismayta/zsh-notify
+  https://github.com/luismayta/zsh-functions
+  ```
+
+installation:
+  - 'docs/include/installation/oh-my-zsh.md'
+  - 'docs/include/installation/antigen.md'
+  - 'docs/include/installation/antibody.md'
+
+# How to use this project
+usage: |-
+  ```bash
+  make setup
+  ```
+
+# Contributors to this project
+contributors:
+  - name: 'Luis Mayta'
+    github: 'luismayta'
