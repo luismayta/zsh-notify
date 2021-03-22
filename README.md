@@ -12,28 +12,35 @@
 
   -->
 
+ 
+
 # zsh-notify
+ [![Lint](https://github.com/luismayta/zsh-notify/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/luismayta/zsh-notify/actions) [![Issues](https://img.shields.io/github/issues/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/issues) [![Latest Release](https://img.shields.io/github/release/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/releases)
 
-[![Build Status](https://travis-ci.org/luismayta/zsh-notify.svg?branch=main)](https://travis-ci.org/luismayta/zsh-notify) [![Issues](https://img.shields.io/github/issues/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/issues) [![Latest Release](https://img.shields.io/github/release/luismayta/zsh-notify.svg)](https://travis-ci.org/luismayta/zsh-notify/releases)
+ zsh-notify plugin for zsh. 
 
-zsh-notify plugin for zsh.
 
----
 
-This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) plugins of zsh.
+
+
+
+
+
+
+
+
+
 
 ## Requirements
 
+
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-```{.sourceCode .bash}
-https://github.com/luismayta/zsh-core
-https://github.com/luismayta/zsh-notify
-https://github.com/luismayta/zsh-functions
-```
+* [zsh-core](https://github.com/hadenlabs/zsh-core)
+
+
 
 ## Installation
-
 ### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) users
 
 If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install this plugin by doing the following:
@@ -42,7 +49,6 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 2.  Clone the plugin `bash git clone https://github.com/luismayta/zsh-notify`bash
 3.  Edit your `.zshrc` and add `plugins=( ... zsh-notify )` to your list of plugins
 4.  Open a new terminal and enjoy!
-
 ### [antigen](https://github.com/zsh-users/antigen) users
 
 If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this plugin by doing the following:
@@ -50,10 +56,9 @@ If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this p
 1.  Add `antigen bundle luismayta/zsh-notify` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle luismayta/zsh-notify` in a running zsh session.
 3.  Enjoy!
-
 ### [antibody](https://github.com/getantibody/antibody) users
 
-If you're using [Antigen](https://github.com/getantibody/antibody), install this plugin by doing the following:
+If you're using [Antibodyu](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
 1.  Add :
 
@@ -66,17 +71,43 @@ to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle luismayta/zsh-notify` in a running zsh session.
 3.  Enjoy!
 
+
+
+
 ## Usage
 
-```bash
-make setup
-```
+
+
+
+
+
+
+
+ ## Functions
+
+zsh tmux includes a small utility `tmux`.
+
+#### `tmux::post_install`
+
+Synchronizes and install configurations.
+
+#### `tmux::sync`
+
+Synchronizes the configurations that are in `conf/.tmux.conf`
+
+#### `tmux::install`
+
+Install tmux
+
+
+
+
 
 ## Help
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/luismayta/zsh-notify/issues), send us an [email][email] or join our [Slack Community][slack].
+File a GitHub [issue](https://github.com/luismayta/zsh-notify/issues), send us an [email](email) or join our [Slack Community](slack).
 
 ## Contributing
 
@@ -84,9 +115,7 @@ File a GitHub [issue](https://github.com/luismayta/zsh-notify/issues), send us a
 
 Please use the [issue tracker](https://github.com/luismayta/zsh-notify/issues) to report any bugs or file feature requests.
 
-### Developing
-
-If you are interested in being a contributor and want to get involved in developing this project or [help out](https://hadenlabs.com) with our other projects, we would love to hear from you! Shoot us an [email](mailto:support@hadenlabs.com).
+### Development
 
 In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
@@ -98,26 +127,33 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
-### Versioning
+#### Versioning
 
-Releases are managed using github release feature. We use \[Semantic Versioning\](<http://semver.org>) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+Releases are managed using github release feature. We use [Semantic Versioning](http://semver.org) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+
+
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
 
-## About
 
-This project is maintained and funded by [Hadenlabs][https://hadenlabs.com]. Like it? Please let us know at <support@hadenlabs.com>
 
-### Contributors
 
-| [![Luis Mayta][luismayta_avatar]][luismayta_homepage]<br/>[Luis Mayta][luismayta_homepage] |
-| ------------------------------------------------------------------------------------------ |
 
-[luismayta_homepage]: https://github.com/luismayta
-[luismayta_avatar]: https://github.com/luismayta.png?size=150
+
+## License
+
+The code and styles are licensed under the MIT license [See project license.](LICENSE).
+
+
+
+## Don't forget to 🌟 Star 🌟 the repo if you like zsh-notify
+
+[Your feedback is appreciated](https://github.com/luismayta/zsh-notify/issues)
