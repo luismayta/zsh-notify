@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. This file u
 
 
 <a name="0.1.0"></a>
-## [0.1.0](https://github.com/luismayta/zsh-notify/compare/0.0.0...0.1.0)
+## 0.1.0
 
 > 2021-01-27
 
@@ -63,10 +63,4 @@ All notable changes to this project will be documented in this file. This file u
 * implement settings for travis ([#13](https://github.com/luismayta/zsh-notify/issues/13))
 * upgrade lock for pipenv ([#5](https://github.com/luismayta/zsh-notify/issues/5))
 * template value ([#1](https://github.com/luismayta/zsh-notify/issues/1))
-
-
-<a name="0.0.0"></a>
-## 0.0.0
-
-> 2021-01-27
 
