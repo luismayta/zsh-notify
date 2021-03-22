@@ -1,6 +1,6 @@
 ### [antibody](https://github.com/getantibody/antibody) users
 
-If you're using [Antigen](https://github.com/getantibody/antibody), install this plugin by doing the following:
+If you're using [Antibodyu](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
 1.  Add :
 

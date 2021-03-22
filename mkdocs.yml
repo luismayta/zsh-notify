@@ -17,7 +17,7 @@ extra:
 
 repo_name: 'luismayta/zsh-notify'
 repo_url: 'https://github.com/luismayta/zsh-notify'
-copyright: 'Copyright © 2020 <a href="https://hadenlabs.com">hadenlabs</a>'
+copyright: 'Copyright © 2021 <a href="https://hadenlabs.com">hadenlabs</a>'
 
 google_analytics:
   - ''
