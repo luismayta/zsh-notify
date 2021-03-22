@@ -5,11 +5,11 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit
-    rev: v2.9.3
+    rev: v2.11.1
     hooks:
       - id: validate_manifest
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.1.3
+    rev: v1.2.1
     hooks:
       - id: python-safety-dependencies-check
   - repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
@@ -19,12 +19,12 @@ repos:
         args: []
         files: .py$
   - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.6.0
+    rev: v2.7.2
     hooks:
       - id: pylint
         exclude: __pycache__|migrations|conf.py|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
         args:
-          - --rcfile=.pylintrc
+          - --rcfile=.github/linters/.pylintrc
           - --disable=no-name-in-module,import-error,ungrouped-imports
           - --ignore=settings_test, migrations
   - repo: https://github.com/ambv/black
@@ -32,11 +32,11 @@ repos:
     hooks:
       - id: black
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.4
+    rev: 3.9.0
     hooks:
       - id: flake8
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.790
+    rev: v0.812
     hooks:
       - id: mypy
         args:
@@ -78,16 +78,17 @@ repos:
     hooks:
       - id: do_not_commit
   - repo: https://github.com/asottile/blacken-docs
-    rev: v1.9.1
+    rev: v1.10.0
     hooks:
       - id: blacken-docs
         additional_dependencies:
           - black
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.45.0
+  - repo: git://github.com/dnephin/pre-commit-golang
+    rev: v0.3.5
     hooks:
-      - id: terraform_fmt
-      - id: terraform_docs
+      - id: validate-toml
+      - id: no-go-testing
+      - id: golangci-lint
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.7.1.1
     hooks:
@@ -108,14 +109,15 @@ repos:
         args:
           - '--write=true'
           - '--list-different'
-          - '--config=prettier.config.js'
-        files: \.(js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml,html)$
-        exclude: lib|node_modules
+          - '--config=.github/linters/prettier.config.js'
+          - '--ignore-path=.github/linters/.prettierignore'
+        files: \.(js|jsx|json|ts|tsx|mjs|d.ts|md|yml|yaml|gql|graphql|mjml)$
+        exclude: node_modules
       - id: eslint
         name: eslint
         language: system
         pass_filenames: true
-        entry: node_modules/eslint/bin/eslint.js --config=.eslintrc.js --ignore-path=.eslintignore --color
+        entry: node_modules/eslint/bin/eslint.js --config=.github/linters/.eslintrc.js --ignore-path=.github/linters/.eslintignore --color
         args:
           - '--fix'
         files: \.(js|jsx|ts|tsx|mjs|d.ts)$
@@ -123,9 +125,9 @@ repos:
         name: stylint
         language: system
         pass_filenames: true
-        entry: node_modules/stylelint/bin/stylelint.js --config=.stylintrc --syntax less **/*.less
+        entry: node_modules/stylelint/bin/stylelint.js --config=.github/linters/.stylintrc --syntax less **/*.less
         args: [--fix]
-        files: \.(less)$
+        files: \.(css|scss|sass|less)$
       - id: dockerfile-provides-entrypoint
         name: hadolint
         description: Lint Dockerfiles with hadolint
