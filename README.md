@@ -58,7 +58,7 @@ If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this p
 3.  Enjoy!
 ### [antibody](https://github.com/getantibody/antibody) users
 
-If you're using [Antibodyu](https://github.com/getantibody/antibody), install this plugin by doing the following:
+If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
 1.  Add :
 
@@ -84,20 +84,6 @@ to your `.zshrc` where you're adding your other plugins.
 
 
  ## Functions
-
-zsh tmux includes a small utility `tmux`.
-
-#### `tmux::post_install`
-
-Synchronizes and install configurations.
-
-#### `tmux::sync`
-
-Synchronizes the configurations that are in `conf/.tmux.conf`
-
-#### `tmux::install`
-
-Install tmux
 
 
 
