@@ -6,17 +6,17 @@ function notify::internal::notify::popup {
 }
 
 function notify::internal::notify::play {
-    mpg123 "${1}"
+    mpg123 "${1}" > /dev/null 2>&1
 }
 
 function notify::internal::notify::success {
     notify::internal::notify::popup "${1}" "The command succeded after ${2} seconds" success.jpg
-    notify::internal::notify::play "${ZSH_NOTIFY_ASSETS_SOUND_PATH}"/r2d2/success.mp3 > /dev/null 2>&1
+    notify::internal::notify::play "${ZSH_NOTIFY_ASSETS_SOUND_PATH}"/r2d2/success.mp3
 }
 
 function notify::internal::notify::error {
    notify::internal::notify::popup "${1}" "The command failed after ${2} seconds with code: ${3}" error.png
-   notify::internal::notify::play "${ZSH_NOTIFY_ASSETS_SOUND_PATH}"/r2d2/error.mp3 > /dev/null 2>&1
+   notify::internal::notify::play "${ZSH_NOTIFY_ASSETS_SOUND_PATH}"/r2d2/error.mp3
 }
 
 function notify::internal::notify::command::store {
