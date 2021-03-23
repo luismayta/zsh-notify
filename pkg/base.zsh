@@ -7,17 +7,19 @@ function notify::dependences {
 }
 
 function notify::success {
-    notify::internal::notify::popup "${1}" "${2}"
-    notify::internal::notify::play "${1}"
+    notify::internal::notify::success "${1}" "${2}"
 }
 
 function notify::error {
-    notify::popup "${1}" "${2}" "${3}"
-    notify::internal::notify::play "${1}"
+    notify::internal::notify::error "${1}" "${2}" "${3}"
 }
 
 function notify::play {
     notify::internal::notify::play "${1}"
+}
+
+function notify::popup {
+    notify::internal::notify::popup
 }
 
 function notify::command::completed {

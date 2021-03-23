@@ -43,10 +43,10 @@ function notify::internal::notify::command::completed {
     timediff="$(( now - _zsh_notify_start_time ))"
 
     if (( timediff > _ZSH_NOTIFY_TIME_THRESHOLD )); then
-        if [[ ${last_status} = 0 ]]; then
-            notify::success ${_zsh_notify_last_command} ${timediff}
+        if [[ "${last_status}" = 0 ]]; then
+            notify::success "${_zsh_notify_last_command}" "${timediff}"
         else
-            notify::error ${_zsh_notify_last_command} ${timediff} ${last_status}
+            notify::error "${_zsh_notify_last_command}" "${timediff}" "${last_status}"
         fi
     fi
 
