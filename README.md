@@ -16,7 +16,12 @@
 
 [![Lint](https://github.com/luismayta/zsh-notify/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/luismayta/zsh-notify/actions) [![Issues](https://img.shields.io/github/issues/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/issues) [![Latest Release](https://img.shields.io/github/release/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/releases)
 
-zsh-notify plugin for zsh.
+zsh-notify plugin for zsh with auto install and sound of r2d2.
+
+## Features
+
+- auto install dependencies
+- sound of r2d2 for success and error commands
 
 ## Requirements
 
@@ -50,7 +55,7 @@ If you're using [Antibody](https://github.com/getantibody/antibody), install thi
 1.  Add :
 
 ```{.sourceCode .bash}
-     antibody bundle luismayta/zsh-notify
+     antibody bundle luismayta/zsh-notify branch:develop
 ```
 
 to your `.zshrc` where you're adding your other plugins.
@@ -59,6 +64,8 @@ to your `.zshrc` where you're adding your other plugins.
 3.  Enjoy!
 
 ## Usage
+
+The only thing that is needed is to add it to your ZSH configuration
 
 ## Functions
 
