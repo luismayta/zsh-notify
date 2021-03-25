@@ -1,6 +1,27 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/zsh,python,node,zsh
-# Edit at https://www.toptal.com/developers/gitignore?templates=zsh,python,node,zsh
+# Created by https://www.toptal.com/developers/gitignore/api/python,node,go,zsh
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,node,go,zsh
+
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+### Go Patch ###
+/vendor/
+/Godeps/
 
 ### Node ###
 # Logs
@@ -92,6 +113,14 @@ typings/
 .nuxt
 dist
 
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# rollup.js default build output
+dist/
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
@@ -116,6 +145,10 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Temporary folders
+tmp/
+temp/
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -123,18 +156,14 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -210,6 +239,9 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
+# poetry
+#poetry.lock
+
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
@@ -221,7 +253,9 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.venv
+# .env
+.env/
+.venv/
 env/
 venv/
 ENV/
@@ -250,8 +284,13 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+# operating system-related files
+*.DS_Store #file properties cache/storage on macOS
+Thumbs.db #thumbnail cache on Windows
+
 # profiling data
 .prof
+
 
 ### Zsh ###
 # Zsh compiled script + zrecompile backup
@@ -277,9 +316,10 @@ zsdoc/data
 
 # MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
 # (for Zsh plugins using Python)
+.venv
 
 # Zunit tests' output
 /tests/_output/*
 !/tests/_output/.gitkeep
 
-# End of https://www.toptal.com/developers/gitignore/api/zsh,python,node,zsh
+# End of https://www.toptal.com/developers/gitignore/api/python,node,go,zsh
