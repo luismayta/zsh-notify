@@ -19,4 +19,3 @@ function notify::internal::main::factory {
 notify::internal::main::factory
 
 if ! core::exists mpg123; then core::install mpg123; fi
-if ! core::exists terminal-notifier; then core::install terminal-notifier; fi
