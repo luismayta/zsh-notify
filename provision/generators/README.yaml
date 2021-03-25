@@ -33,7 +33,11 @@ badges:
 
 # Short description of this project
 description: |-
-  zsh-notify plugin for zsh.
+  zsh-notify plugin for zsh with auto install and sound of r2d2.
+
+features:
+  - 'auto install dependencies'
+  - 'sound of r2d2 for success and error commands'
 
 requirements: |-
 
@@ -42,6 +46,7 @@ requirements: |-
   * [zsh-core](https://github.com/hadenlabs/zsh-core)
 
 usage: |
+  The only thing that is needed is to add it to your ZSH configuration
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
