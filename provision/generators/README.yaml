@@ -43,7 +43,6 @@ requirements: |-
 
 usage: |
 
-
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
   - 'docs/include/installation/antigen.md'
