@@ -1,0 +1,9 @@
+origin: github.com/luismayta/zsh-notify
+issue_tracker: GITHUB
+auth:
+  type: none
+ignored:
+  - vendor/
+  - node_modules/
+custom_todos:
+  - '@fix'
