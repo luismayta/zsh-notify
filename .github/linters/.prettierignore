@@ -9,5 +9,7 @@ coverage
 .mypy_cache/
 .build
 .terraform
+terraform.md
 *.tpl.md
 *.enc.yaml
+vendor
