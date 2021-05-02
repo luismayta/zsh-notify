@@ -1,14 +1,14 @@
 module.exports = {
-  tabWidth: 2,
-  printWidth: 100,
+  arrowParens: 'always',
+  printWidth: 120,
   proseWrap: 'preserve',
   semi: false,
-  trailingComma: 'none',
-  arrowParens: 'always',
   singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'none',
   overrides: [
     {
-      files: '{*.js?(on),*.y?(a)ml,.*.js?(on),.*.y?(a)ml,*.md,.prettierrc,.stylelintrc,.babelrc}',
+      files: '{*.js?(x),*.ts?(x),*.y?(a)ml,.*.y?(a)ml,*.md,.prettierrc,.stylelintrc,.babelrc}',
       options: {
         arrowParens: 'always',
         printWidth: 100,
@@ -20,9 +20,10 @@ module.exports = {
       }
     },
     {
-      files: '{**/.vscode/*.json,**/tsconfig.json,**/tsconfig.*.json}',
+      files: '{*.json,.*.json,**/.vscode/*.json,**/tsconfig.json,**/tsconfig.*.json}',
       options: {
         parser: 'json',
+        tabWidth: 2,
         quoteProps: 'preserve',
         singleQuote: false
       }
