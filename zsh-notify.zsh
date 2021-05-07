@@ -24,7 +24,7 @@ source "${ZSH_NOTIFY_PATH}"/pkg/main.zsh
 
 # notify if commands was running for more than TIME_THRESHOLD seconds:
 typeset -g _ZSH_NOTIFY_TIME_THRESHOLD=10
-typeset -g _ZSH_NOTIFY_RE_SKIP_COMMANDS="^[^ ]*(ssh|vim|tmux|tig|man|cat|more)"
+typeset -g _ZSH_NOTIFY_RE_SKIP_COMMANDS="^[^ ]*(ssh|vi|vim|nvim|tmux|tig|man|cat|more|less)"
 typeset -g _ZSH_NOTIFY_TERMINAL_BUNDLE="com.googlecode.iterm2"
 
 
