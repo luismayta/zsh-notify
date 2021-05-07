@@ -21,15 +21,24 @@ github_repo: luismayta/zsh-notify
 
 # Badges to display
 badges:
+  - name: GitHub release
+    image: https://img.shields.io/github/release/luismayta/zsh-notify?style=flat-square
+    url: https://github.com/luismayta/zsh-notify/releases/latest
   - name: Lint
-    image: https://github.com/luismayta/zsh-notify/actions/workflows/lint.yml/badge.svg?branch=develop
-    url: https://github.com/luismayta/zsh-notify/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/luismayta/zsh-notify.svg
-    url: https://github.com/luismayta/zsh-notify/issues
-  - name: Latest Release
-    image: https://img.shields.io/github/release/luismayta/zsh-notify.svg
-    url: https://github.com/luismayta/zsh-notify/releases
+    image: https://img.shields.io/github/workflow/status/luismayta/zsh-notify/lint-code
+    url: https://github.com/luismayta/zsh-notify/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/luismayta/zsh-notify/ci
+    url: https://github.com/luismayta/zsh-notify/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/luismayta/zsh-notify/test
+    url: https://github.com/luismayta/zsh-notify/actions?workflow=test
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
 
 # Short description of this project
 description: |-

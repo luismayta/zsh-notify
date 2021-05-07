@@ -1,4 +1,3 @@
-
 <!--
 
 
@@ -45,7 +44,7 @@
 
 {{ if has (ds "config") "todo" }}
 
-## To-do
+## TODO
 
 {{ range $todo := (ds "config").todo }}
 {{ printf "* [%s](%s)" $todo.name $todo.url }}
@@ -205,4 +204,3 @@ The code and styles are licensed under the {{(ds "config").license }} license [S
 ## Don't forget to 🌟 Star 🌟 the repo if you like {{(ds "config").name}}
 
 [Your feedback is appreciated]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}})
-
