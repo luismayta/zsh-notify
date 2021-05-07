@@ -30,9 +30,6 @@ badges:
   - name: CI
     image: https://img.shields.io/github/workflow/status/luismayta/zsh-notify/ci
     url: https://github.com/luismayta/zsh-notify/actions?workflow=ci
-  - name: Test
-    image: https://img.shields.io/github/workflow/status/luismayta/zsh-notify/test
-    url: https://github.com/luismayta/zsh-notify/actions?workflow=test
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org

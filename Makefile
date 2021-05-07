@@ -63,6 +63,8 @@ docker-yarn-run:=$(docker-dev) run --rm --service-ports ${DOCKER_SERVICE_YARN}
 
 include provision/make/*.mk
 
+## Display help for all targets
+.PHONY: help
 help:
 	@echo '${MESSAGE} Makefile for ${PROJECT}'
 	@echo ''
