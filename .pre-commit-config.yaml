@@ -30,7 +30,7 @@ repos:
         args: []
         files: .py$
   - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v3.0.0a1
+    rev: v3.0.0a3
     hooks:
       - id: pylint
         exclude: __pycache__|migrations|conf.py|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
@@ -39,7 +39,7 @@ repos:
           - --disable=no-name-in-module,import-error,ungrouped-imports
           - --ignore=settings_test, migrations
   - repo: https://github.com/ambv/black
-    rev: 20.8b1
+    rev: 21.5b0
     hooks:
       - id: black
   - repo: https://gitlab.com/pycqa/flake8
@@ -89,7 +89,7 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: ab7a684f0ab65a90038ea540eaa2afbed1b246be
+    rev: b7e7853e35a79db975171f80f0aabedb4f2e3e78
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -117,19 +117,21 @@ repos:
         entry: ./node_modules/prettier/bin-prettier.js
         args:
           - '--write=true'
-          - '--list-different'
           - '--config=.github/linters/prettier.config.js'
           - '--ignore-path=.github/linters/.prettierignore'
         files: \.(js|jsx|json|ts|tsx|mjs|d.ts|md|yml|yaml|gql|graphql|mjml)$
         exclude: node_modules
       - id: eslint
         name: eslint
-        language: system
-        pass_filenames: true
-        entry: node_modules/eslint/bin/eslint.js --config=.github/linters/.eslintrc.js --ignore-path=.github/linters/.eslintignore --color
+        language: node
+        entry: node_modules/eslint/bin/eslint.js
         args:
           - '--fix'
+          - '--color'
+          - '--config=.github/linters/.eslintrc.js'
+          - '--ignore-path=.github/linters/.eslintignore'
         files: \.(js|jsx|ts|tsx|mjs|d.ts)$
+        exclude: node_modules
       - id: stylint
         name: stylint
         language: system

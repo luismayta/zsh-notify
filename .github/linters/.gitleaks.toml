@@ -161,8 +161,13 @@ title = "gitleaks config"
 
 [[rules]]
     description = "Files with keys and credentials"
-    file = '''(?i)(id_rsa|passwd|id_rsa.pub|pgpass|pem|ppk)'''
-    tags = ["key", "credentials"]
+    file = '''(?i)(id_rsa|passwd|id_rsa.pub|pgpass)$'''
+    tags = ["key", "files"]
+
+[[rules]]
+    description = "Extension Files with keys and credentials"
+    file = '''(.*?)(pub|pem|ppk|key)$'''
+    tags = ["key", "files"]
 
 # Global allowlist
 [allowlist]
