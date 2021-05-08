@@ -14,7 +14,7 @@
 
 # zsh-notify
 
-[![Lint](https://github.com/luismayta/zsh-notify/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/luismayta/zsh-notify/actions) [![Issues](https://img.shields.io/github/issues/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/issues) [![Latest Release](https://img.shields.io/github/release/luismayta/zsh-notify.svg)](https://github.com/luismayta/zsh-notify/releases)
+[![GitHub release](https://img.shields.io/github/release/luismayta/zsh-notify?style=flat-square)](https://github.com/luismayta/zsh-notify/releases/latest) [![Lint](https://img.shields.io/github/workflow/status/luismayta/zsh-notify/lint-code)](https://github.com/luismayta/zsh-notify/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/luismayta/zsh-notify/ci)](https://github.com/luismayta/zsh-notify/actions?workflow=ci) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
 zsh-notify plugin for zsh with auto install and sound of r2d2.
 
