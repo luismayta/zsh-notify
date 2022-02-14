@@ -45,7 +45,7 @@
     resolve-global "1.0.0"
     yargs "^16.2.0"
 
-"@commitlint/cli@^16.1.0":
+"@commitlint/cli@^16.2.1":
   version "16.2.1"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-16.2.1.tgz#ca4e557829a2755f0e1f0cd69b56b83ce2510173"
   integrity sha512-zfKf+B9osuiDbxGMJ7bWFv7XFCW8wlQYPtCffNp7Ukdb7mdrep5R9e03vPUZysnwp8NX6hg05kPEvnD/wRIGWw==
