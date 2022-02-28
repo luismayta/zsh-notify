@@ -2897,9 +2897,9 @@ string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
     strip-ansi "^6.0.1"
 
 string-width@^5.0.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-5.1.1.tgz#8825ca5f6b8dd5566a674e4f85001475a4b9c46e"
-  integrity sha512-V4jFFhDoJzUOpG491nUrDginBuZi+wKtG+omlT5hgdBLYGPNNVT/o75JWwsSqClbrYMEV9Dvm3fXjZzxyOjk2w==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-5.1.2.tgz#14f8daec6d81e7221d2a357e668cab73bdbca794"
+  integrity sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==
   dependencies:
     eastasianwidth "^0.2.0"
     emoji-regex "^9.2.2"
