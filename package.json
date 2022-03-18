@@ -5,7 +5,7 @@
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "LGPL-3.0",
   "engines": {
-    "node": ">=v14.19.0"
+    "node": ">=v14.19.1"
   },
   "scripts": {
     "build": "tsc -p ./",
