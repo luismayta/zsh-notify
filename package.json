@@ -67,7 +67,7 @@
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
     "prettier-eslint": "^15.0.1",
-    "rimraf": "^4.1.0",
+    "rimraf": "^4.1.1",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
     "ts-node": "^10.9.1",
