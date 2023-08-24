@@ -71,7 +71,7 @@
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "prettier": "./.github/linters/prettier.config.js",
   "stylintrc": ".github/linters/.stylintrc"
