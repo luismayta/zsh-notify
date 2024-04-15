@@ -53,7 +53,7 @@
   "homepage": "https://github.com/luismayta/zsh-notify#readme",
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
+    "@commitlint/cli": "^19.2.2",
     "@hadenlabs/commitlint-config": "^0.1.0",
     "@types/rimraf": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
